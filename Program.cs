@@ -14,27 +14,48 @@ namespace EscrituraArchivos
         {
 
             StreamWriter sw = new StreamWriter("ejemplo.txt",true);
+            
 
             //Si no existe el archivo, se creará.
             //Si existe, solo escribirá en él
             //Con true, se esta añadiendo nuevas lineas de texto. En vez de estar sobreescribiendo
 
-            string[] lines =
-            {
-                "Esta es una nueva linea",
-                "Segunda linea",
-                "Tercera linea",
-                "Fin del texto"
+            
 
-            };
+            string nombre;
+            int cant;
+            
 
-            foreach(string line in lines)
+            Console.Write("-Cuantos nombres quieres agregar?");
+            cant = int.Parse(Console.ReadLine());
+
+            string[] lines = new string[cant];
+
+            for(int i=0; i<cant; i++) 
+            { 
+
+                Console.Write("-Indica un nuevo nombre: ");
+                nombre = Console.ReadLine();
+
+                lines[i] = nombre;
+                Console.WriteLine("Se añadió el nombre");
+
+            }
+
+           
+
+            
+            foreach (string line in lines)
             {
                 sw.WriteLine(line);
             }
+            Console.WriteLine("Se sobreescribió en el archivo...");
+            
+            
+            
             sw.Close(); //Se debe cerrar el archivo
 
-            Console.WriteLine("Se escribió en el archivo...");
+            
             Console.ReadKey();
         }
     }
