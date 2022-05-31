@@ -12,14 +12,16 @@ namespace EscrituraArchivos
         //Reynoso Rosales Eduardo Guadalupe #21212036
         static void Main(string[] args)
         {
-            StreamWriter sw = new StreamWriter("ejemplo.txt");
+
+            StreamWriter sw = new StreamWriter("ejemplo.txt",true);
 
             //Si no existe el archivo, se creará.
             //Si existe, solo escribirá en él
+            //Con true, se esta añadiendo nuevas lineas de texto. En vez de estar sobreescribiendo
 
             string[] lines =
             {
-                "Esta es la informacion de la primera linea",
+                "Esta es una nueva linea",
                 "Segunda linea",
                 "Tercera linea",
                 "Fin del texto"
